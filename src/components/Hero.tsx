@@ -2,21 +2,14 @@ import React from 'react';
 import { WindowsIcon } from './Icons';
 import { ArrowDown, Sparkles, Shield, Cpu, Zap } from 'lucide-react';
 import { ProductPreview } from './ProductPreview';
-import { APP_CONFIG, DOWNLOAD_URL } from '../config';
+import { DOWNLOAD_URL } from '../config';
 import { motion, type Variants } from 'framer-motion';
 
 interface HeroProps {
-  onOpenDownloadModal: () => void;
+  onOpenDownloadModal?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenDownloadModal }) => {
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    if (!APP_CONFIG.isDownloadConfigured()) {
-      e.preventDefault();
-      onOpenDownloadModal();
-    }
-  };
-
+export const Hero: React.FC<HeroProps> = () => {
   const handleScrollToFeatures = (e: React.MouseEvent) => {
     e.preventDefault();
     const el = document.getElementById('features');
@@ -65,7 +58,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownloadModal }) => {
           <motion.div variants={itemVariants} className="hero-badge-wrapper">
             <span className="hero-badge">
               <Sparkles size={14} className="text-white" />
-              <span>Official Windows Release • Desktop Utility</span>
+              <span>MediaGrab v1.0.10 • Official Windows Release</span>
             </span>
           </motion.div>
 
@@ -88,9 +81,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDownloadModal }) => {
           {/* Action Buttons */}
           <motion.div variants={itemVariants} className="hero-cta-group">
             <a
-              href={APP_CONFIG.isDownloadConfigured() ? DOWNLOAD_URL : '#download'}
+              href={DOWNLOAD_URL}
+              download
               className="btn btn-primary btn-lg hero-btn-primary"
-              onClick={handleDownloadClick}
             >
               <WindowsIcon size={19} />
               <span>Download for Windows</span>

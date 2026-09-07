@@ -4,17 +4,10 @@ import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { APP_CONFIG, DOWNLOAD_URL } from '../config';
 
 interface FooterProps {
-  onOpenDownloadModal: () => void;
+  onOpenDownloadModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenDownloadModal }) => {
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    if (!APP_CONFIG.isDownloadConfigured()) {
-      e.preventDefault();
-      onOpenDownloadModal();
-    }
-  };
-
+export const Footer: React.FC<FooterProps> = () => {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const el = document.getElementById(id);
@@ -68,8 +61,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownloadModal }) => {
             <ul className="footer-nav-list">
               <li>
                 <a
-                  href={APP_CONFIG.isDownloadConfigured() ? DOWNLOAD_URL : '#download'}
-                  onClick={handleDownloadClick}
+                  href={DOWNLOAD_URL}
+                  download
                   className="download-link-accent"
                 >
                   <WindowsIcon size={14} />
@@ -102,6 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownloadModal }) => {
             <h4 className="footer-heading">System Specs</h4>
             <ul className="footer-specs-list">
               <li>Platform: <strong>Windows 10/11 (64-bit)</strong></li>
+              <li>Version: <strong>MediaGrab {APP_CONFIG.version}</strong></li>
               <li>Architecture: <strong>x64 / AMD64</strong></li>
               <li>Format: <strong>Installer & Portable</strong></li>
               <li>Telemetry: <strong>Zero Tracking</strong></li>

@@ -5,18 +5,11 @@ import { APP_CONFIG, DOWNLOAD_URL } from '../config';
 import { motion } from 'framer-motion';
 
 interface DownloadCTAProps {
-  onOpenDownloadModal: () => void;
+  onOpenDownloadModal?: () => void;
 }
 
 export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal }) => {
   const isConfigured = APP_CONFIG.isDownloadConfigured();
-
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    if (!isConfigured) {
-      e.preventDefault();
-      onOpenDownloadModal();
-    }
-  };
 
   return (
     <section className="section-wrapper download-section" id="download">
@@ -31,12 +24,11 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
           {/* Ambient Monochromatic Glows */}
           <div className="cta-glow-blue" />
           <div className="cta-glow-purple" />
-
           <div className="download-cta-content">
             {/* Status Pill */}
             <div className="cta-badge">
               <span className="pulse-dot" />
-              <span>Windows 10 & 11 Ready • Latest Build</span>
+              <span>Windows 10 & 11 Ready • MediaGrab v1.0.10</span>
             </div>
 
             <h2 className="cta-title">Ready to try MediaGrab?</h2>
@@ -47,15 +39,15 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
             {/* Main Action Button */}
             <div className="cta-action-area">
               <a
-                href={isConfigured ? DOWNLOAD_URL : '#download'}
+                href={DOWNLOAD_URL}
+                download
                 className="btn btn-primary btn-lg cta-primary-btn"
-                onClick={handleDownloadClick}
               >
                 <WindowsIcon size={20} />
                 <span>Download for Windows</span>
               </a>
 
-              {!isConfigured && (
+              {!isConfigured && onOpenDownloadModal && (
                 <button
                   type="button"
                   className="btn btn-secondary btn-lg"
@@ -70,7 +62,7 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
             <div className="cta-sub-meta">
               <span>Windows • Desktop Application</span>
               <span className="meta-separator">•</span>
-              <span>{APP_CONFIG.version} (64-bit)</span>
+              <span>MediaGrab {APP_CONFIG.version} (64-bit)</span>
               <span className="meta-separator">•</span>
               <span>Free Utility</span>
             </div>

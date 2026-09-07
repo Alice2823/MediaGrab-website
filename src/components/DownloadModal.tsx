@@ -50,7 +50,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                 </div>
                 <div>
                   <h3 id="modal-title" className="modal-title">{APP_CONFIG.name} for Windows</h3>
-                  <p className="modal-subtitle">{APP_CONFIG.targetPlatform} • {APP_CONFIG.version}</p>
+                  <p className="modal-subtitle">{APP_CONFIG.targetPlatform} • MediaGrab {APP_CONFIG.version}</p>
                 </div>
               </div>
 
@@ -88,9 +88,8 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                 {isConfigured ? (
                   <a
                     href={DOWNLOAD_URL}
+                    download
                     className="btn btn-primary btn-lg full-width"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <WindowsIcon size={18} />
                     <span>Download MediaGrab Installer (.exe)</span>

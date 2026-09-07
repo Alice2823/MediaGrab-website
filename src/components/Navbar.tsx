@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { MediaGrabLogo, WindowsIcon } from './Icons';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { APP_CONFIG, DOWNLOAD_URL } from '../config';
+import { DOWNLOAD_URL } from '../config';
 
 interface NavbarProps {
-  onOpenDownloadModal: () => void;
+  onOpenDownloadModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,13 +26,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal }) => {
     { label: 'Conversion', href: '#conversion' },
     { label: 'FAQ', href: '#faq' },
   ];
-
-  const handleDownloadClick = (e: React.MouseEvent) => {
-    if (!APP_CONFIG.isDownloadConfigured()) {
-      e.preventDefault();
-      onOpenDownloadModal();
-    }
-  };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -73,9 +66,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal }) => {
         {/* Action Button */}
         <div className="navbar-cta-group">
           <a
-            href={APP_CONFIG.isDownloadConfigured() ? DOWNLOAD_URL : '#download'}
+            href={DOWNLOAD_URL}
+            download
             className="btn btn-primary nav-download-btn"
-            onClick={handleDownloadClick}
           >
             <WindowsIcon size={16} />
             <span>Download for Windows</span>
@@ -113,17 +106,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal }) => {
 
             <div className="mobile-drawer-cta">
               <a
-                href={APP_CONFIG.isDownloadConfigured() ? DOWNLOAD_URL : '#download'}
+                href={DOWNLOAD_URL}
+                download
                 className="btn btn-primary btn-lg full-width"
-                onClick={(e) => {
-                  setMobileMenuOpen(false);
-                  handleDownloadClick(e);
-                }}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 <WindowsIcon size={18} />
                 <span>Download for Windows</span>
               </a>
-              <p className="mobile-cta-note">Windows 10 / 11 64-bit • Free Utility</p>
+              <p className="mobile-cta-note">Windows 10 / 11 64-bit • MediaGrab v1.0.10 • Free Utility</p>
             </div>
           </div>
         </div>
