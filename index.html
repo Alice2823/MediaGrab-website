@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Official MediaGrab Logo Favicons -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=5" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=5" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=5" />
+    <link rel="icon" type="image/png" href="/logo-mark.png?v=5" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png?v=5" />
+    
+    <script>
+      // Force instant browser tab favicon update (bypasses Chromium favicon cache)
+      (function() {
+        try {
+          var bust = Date.now();
+          var link = document.createElement('link');
+          link.rel = 'icon';
+          link.type = 'image/png';
+          link.href = '/favicon-32x32.png?t=' + bust;
+          document.head.appendChild(link);
+        } catch(e) {}
+      })();
+    </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediaGrab &mdash; Download. Convert. Enjoy.</title>
+    <meta name="description" content="MediaGrab is a modern, simple Windows desktop media downloader and converter for permitted media. Fast, privacy-focused, and native desktop performance." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MediaGrab &mdash; Download. Convert. Enjoy." />
+    <meta property="og:description" content="A simple, powerful desktop media downloader and converter for Windows. Download permitted media and convert video and audio files with ease." />
+    <meta property="og:image" content="/logo-mark.png" />
+    <meta property="og:site_name" content="MediaGrab" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MediaGrab — Download. Convert. Enjoy." />
+    <meta name="twitter:description" content="A simple, powerful desktop media downloader and converter for Windows." />
+    <meta name="twitter:image" content="/logo-mark.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

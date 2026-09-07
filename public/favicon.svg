@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Outer metallic bevel gradient -->
+    <linearGradient id="metalOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#555555"/>
+      <stop offset="25%" stop-color="#2a2a2c"/>
+      <stop offset="60%" stop-color="#18181a"/>
+      <stop offset="100%" stop-color="#3a3a3d"/>
+    </linearGradient>
+
+    <!-- Highlight along the curved spine -->
+    <linearGradient id="spineHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a0a0a5" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#505055" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#808085" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <!-- Dark inner recess -->
+    <linearGradient id="innerCavity" x1="20%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="100%" stop-color="#141416"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main rounded triangular ribbon body -->
+  <path d="M 120 72 
+           C 75 72, 45 105, 45 152 
+           L 45 360 
+           C 45 407, 75 440, 120 440 
+           C 145 440, 172 426, 204 402 
+           L 420 286 
+           C 456 266, 456 246, 420 226 
+           L 204 110 
+           C 172 86, 145 72, 120 72 Z" 
+        fill="url(#metalOuter)" />
+
+  <!-- Spine Highlight overlay on left curved edge -->
+  <path d="M 120 72 
+           C 75 72, 45 105, 45 152 
+           L 45 360 
+           C 45 407, 75 440, 120 440 
+           C 132 440, 145 435, 158 426
+           L 158 86
+           C 145 77, 132 72, 120 72 Z" 
+        fill="url(#spineHighlight)" 
+        opacity="0.4" />
+
+  <!-- Inner cavity cutout -->
+  <path d="M 148 132 
+           L 148 380 
+           C 170 366, 192 348, 220 330 
+           L 364 256 
+           L 220 182 
+           C 192 164, 170 146, 148 132 Z" 
+        fill="url(#innerCavity)" />
+
+  <!-- Pure White Downward Arrow -->
+  <!-- Arrow Shaft -->
+  <rect x="220" y="76" width="72" height="200" rx="4" fill="#ffffff" />
+  <!-- Arrow Head -->
+  <polygon points="172,260 256,368 340,260" fill="#ffffff" />
+</svg>
