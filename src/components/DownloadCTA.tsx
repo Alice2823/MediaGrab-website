@@ -28,12 +28,12 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
             {/* Status Pill */}
             <div className="cta-badge">
               <span className="pulse-dot" />
-              <span>Windows 10 & 11 Ready • MediaGrab v1.0.10</span>
+              <span>Windows 10 & 11 Ready • MediaGrabs v1.0.10</span>
             </div>
 
-            <h2 className="cta-title">Ready to try MediaGrab?</h2>
+            <h2 className="cta-title">Ready to try MediaGrabs?</h2>
             <p className="cta-description">
-              Download MediaGrab for Windows and enjoy a simple desktop media workflow.
+              Download MediaGrabs for Windows and enjoy a simple desktop media workflow.
             </p>
 
             {/* Main Action Button */}
@@ -62,7 +62,7 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
             <div className="cta-sub-meta">
               <span>Windows • Desktop Application</span>
               <span className="meta-separator">•</span>
-              <span>MediaGrab {APP_CONFIG.version} (64-bit)</span>
+              <span>MediaGrabs {APP_CONFIG.version} (64-bit)</span>
               <span className="meta-separator">•</span>
               <span>Free Utility</span>
             </div>

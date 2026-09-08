@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = () => {
                 <a href="#screenshots" onClick={(e) => scrollToSection(e, 'screenshots')}>App Screenshots</a>
               </li>
               <li>
-                <a href="#why-mediagrab" onClick={(e) => scrollToSection(e, 'why-mediagrab')}>Why MediaGrab</a>
+                <a href="#why-mediagrab" onClick={(e) => scrollToSection(e, 'why-mediagrab')}>Why MediaGrabs</a>
               </li>
               <li>
                 <a
@@ -95,7 +95,7 @@ export const Footer: React.FC<FooterProps> = () => {
             <h4 className="footer-heading">System Specs</h4>
             <ul className="footer-specs-list">
               <li>Platform: <strong>Windows 10/11 (64-bit)</strong></li>
-              <li>Version: <strong>MediaGrab {APP_CONFIG.version}</strong></li>
+              <li>Version: <strong>MediaGrabs {APP_CONFIG.version}</strong></li>
               <li>Architecture: <strong>x64 / AMD64</strong></li>
               <li>Format: <strong>Installer & Portable</strong></li>
               <li>Telemetry: <strong>Zero Tracking</strong></li>
@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="policy-inner">
             <ShieldCheck size={18} className="text-cyan flex-shrink-0" />
             <p className="policy-text">
-              <strong>Responsible Use Notice:</strong> Download content only when you have permission or the right to do so. MediaGrab does not bypass DRM or access restrictions.
+              <strong>Responsible Use Notice:</strong> Download content only when you have permission or the right to do so. MediaGrabs does not bypass DRM or access restrictions.
             </p>
           </div>
         </div>
@@ -117,7 +117,7 @@ export const Footer: React.FC<FooterProps> = () => {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="copyright-text">
-            © 2026 MediaGrab. All rights reserved.
+            © 2026 MediaGrabs. All rights reserved.
           </p>
 
           <div className="footer-bottom-links">

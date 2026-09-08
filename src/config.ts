@@ -10,7 +10,7 @@ export const DOWNLOAD_URL =
 
 // Application Metadata
 export const APP_CONFIG = {
-  name: "MediaGrab",
+  name: "MediaGrabs",
   tagline: "Download. Convert. Enjoy.",
   subHeadline: "Your simple, powerful desktop media downloader and converter.",
   version: "v1.0.10",

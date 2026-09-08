@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Check, 
   X, 
-  Sparkles, 
+  Layout, 
   Zap, 
   Sliders, 
   Laptop, 
@@ -17,7 +17,7 @@ export const WhyMediaGrab: React.FC = () => {
     {
       title: 'Simple Interface',
       desc: 'Designed with zero clutter. Only the controls you need to inspect, select, and process media.',
-      icon: <Sparkles size={22} />,
+      icon: <Layout size={22} />,
     },
     {
       title: 'Fast Workflow',
@@ -58,7 +58,7 @@ export const WhyMediaGrab: React.FC = () => {
           <span className="section-tag">Value Proposition</span>
           <h2 className="section-title">Built for simplicity.</h2>
           <p className="section-description">
-            Say goodbye to intrusive web tools and bloated bloatware. MediaGrab provides a focused, clean desktop experience you can rely on.
+            Say goodbye to intrusive web tools and bloated bloatware. MediaGrabs provides a focused, clean desktop experience you can rely on.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export const WhyMediaGrab: React.FC = () => {
         >
           <div className="comparison-header">
             <h3 className="comparison-headline">Why choose a dedicated Desktop App?</h3>
-            <p className="comparison-sub">A side-by-side look at everyday media tools versus the MediaGrab desktop utility.</p>
+            <p className="comparison-sub">A side-by-side look at everyday media tools versus the MediaGrabs desktop utility.</p>
           </div>
 
           <div className="comparison-table-wrapper">
@@ -99,7 +99,7 @@ export const WhyMediaGrab: React.FC = () => {
                 <tr>
                   <th className="feature-col">Feature Comparison</th>
                   <th className="competitor-col">Generic Web Sites & Extensions</th>
-                  <th className="mediagrab-col">MediaGrab Desktop</th>
+                  <th className="mediagrab-col">MediaGrabs Desktop</th>
                 </tr>
               </thead>
               <tbody>

@@ -44,7 +44,7 @@ export const SupportedMedia: React.FC = () => {
           <span className="section-tag">Platform Compatibility</span>
           <h2 className="section-title">Supported Media Sources</h2>
           <p className="section-description">
-            MediaGrab is tailored specifically for primary video and short-form platforms, providing reliable parsing and optimal quality.
+            MediaGrabs is tailored specifically for primary video and short-form platforms, providing reliable parsing and optimal quality.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export const SupportedMedia: React.FC = () => {
           <div className="disclaimer-inner">
             <Info size={18} className="flex-shrink-0" />
             <p className="disclaimer-text">
-              <strong>Notice:</strong> Support may vary depending on platform availability, content permissions and access restrictions. MediaGrab processes only accessible media and adheres to strict local execution principles.
+              <strong>Notice:</strong> Support may vary depending on platform availability, content permissions and access restrictions. MediaGrabs processes only accessible media and adheres to strict local execution principles.
             </p>
           </div>
         </motion.div>

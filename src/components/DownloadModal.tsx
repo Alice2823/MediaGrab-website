@@ -39,7 +39,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                 <div className="modal-app-icon" style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}>
                   <img
                     src="/logo-mark.png"
-                    alt="MediaGrab Logo"
+                    alt="MediaGrabs Logo"
                     style={{
                       width: 58,
                       height: 58,
@@ -50,7 +50,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                 </div>
                 <div>
                   <h3 id="modal-title" className="modal-title">{APP_CONFIG.name} for Windows</h3>
-                  <p className="modal-subtitle">{APP_CONFIG.targetPlatform} • MediaGrab {APP_CONFIG.version}</p>
+                  <p className="modal-subtitle">{APP_CONFIG.targetPlatform} • MediaGrabs {APP_CONFIG.version}</p>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                   </div>
                   <div className="dev-state-tips">
                     <p className="tip-title">What happens when configured?</p>
-                    <p className="tip-desc">Visitors will instantly download your official MediaGrab installer directly from your GitHub Release.</p>
+                    <p className="tip-desc">Visitors will instantly download your official MediaGrabs installer directly from your GitHub Release.</p>
                   </div>
                 </div>
               ) : (
@@ -92,7 +92,7 @@ export const DownloadModal: React.FC<DownloadModalProps> = ({ isOpen, onClose })
                     className="btn btn-primary btn-lg full-width"
                   >
                     <WindowsIcon size={18} />
-                    <span>Download MediaGrab Installer (.exe)</span>
+                    <span>Download MediaGrabs Installer (.exe)</span>
                   </a>
                 ) : (
                   <a

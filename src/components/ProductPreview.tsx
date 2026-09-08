@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Download, 
-  Sparkles, 
+  Sliders, 
+  Search,
   Check, 
   Play, 
   Film, 
@@ -63,7 +64,7 @@ export const ProductPreview: React.FC = () => {
           className={`mode-tab-btn ${previewMode === 'interactive' ? 'active' : ''}`}
           onClick={() => setPreviewMode('interactive')}
         >
-          <Sparkles size={14} />
+          <Sliders size={14} />
           <span>Live Interactive Sandbox</span>
         </button>
       </div>
@@ -76,11 +77,11 @@ export const ProductPreview: React.FC = () => {
             <div className="app-title-badge">
               <img
                 src="/logo-mark.png"
-                alt="MediaGrab"
+                alt="MediaGrabs"
                 style={{ width: 18, height: 18, objectFit: 'contain', display: 'block' }}
               />
               <span className="window-title-text">
-                MediaGrab Desktop — Download. Convert. Enjoy.
+                MediaGrabs Desktop — Download. Convert. Enjoy.
               </span>
             </div>
             <span className="window-status-pill">Windows Native 64-bit</span>
@@ -107,7 +108,7 @@ export const ProductPreview: React.FC = () => {
               >
                 <img
                   src="/screenshots/app-trimmer.png"
-                  alt="MediaGrab Desktop Clip Trimmer UI"
+                  alt="MediaGrabs Desktop Clip Trimmer UI"
                   className="mockup-real-img"
                   loading="eager"
                 />
@@ -129,7 +130,7 @@ export const ProductPreview: React.FC = () => {
               >
                 <img
                   src="/screenshots/app-converter.png"
-                  alt="MediaGrab Desktop Video to Audio Transcoder"
+                  alt="MediaGrabs Desktop Video to Audio Transcoder"
                   className="mockup-real-img"
                   loading="eager"
                 />
@@ -196,7 +197,7 @@ export const ProductPreview: React.FC = () => {
                         className="mockup-url-field"
                       />
                       <button className="btn-analyze" onClick={simulateAction}>
-                        <Sparkles size={15} />
+                        <Search size={15} />
                         <span>Analyze Link</span>
                       </button>
                     </div>
@@ -259,7 +260,7 @@ export const ProductPreview: React.FC = () => {
                               {isSimulatingDownload && progress < 100
                                 ? `Downloading stream... ${progress}%`
                                 : progress === 100
-                                ? 'Download Complete ✓ Saved to Downloads\\MediaGrab'
+                                ? 'Download Complete ✓ Saved to Downloads\\MediaGrabs'
                                 : 'Stream verified • Ready to process'}
                             </span>
                             <span className="progress-speed">

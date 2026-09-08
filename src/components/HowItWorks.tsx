@@ -7,8 +7,8 @@ export const HowItWorks: React.FC = () => {
     {
       number: '01',
       title: 'Paste',
-      subtitle: 'Paste the media URL into MediaGrab.',
-      detail: 'Copy any supported video or audio link and paste it into the analyzer bar. MediaGrab quickly reads the stream metadata.',
+      subtitle: 'Paste the media URL into MediaGrabs.',
+      detail: 'Copy any supported video or audio link and paste it into the analyzer bar. MediaGrabs quickly reads the stream metadata.',
       icon: <Clipboard size={24} className="text-cyan" />,
       screenshot: '/screenshots/app-home.png',
       caption: 'Instant Link Detection',
@@ -26,7 +26,7 @@ export const HowItWorks: React.FC = () => {
       number: '03',
       title: 'Download',
       subtitle: 'Download the permitted media to your computer.',
-      detail: 'Click download and let MediaGrab save the processed media straight to your local Downloads or chosen folder.',
+      detail: 'Click download and let MediaGrabs save the processed media straight to your local Downloads or chosen folder.',
       icon: <HardDriveDownload size={24} className="text-emerald" />,
       screenshot: '/screenshots/app-complete.png',
       caption: '100% Direct Save to PC',
@@ -82,7 +82,7 @@ export const HowItWorks: React.FC = () => {
                   <div className="step-img-crop">
                     <img
                       src={step.screenshot}
-                      alt={`MediaGrab Step ${step.number} - ${step.title}`}
+                      alt={`MediaGrabs Step ${step.number} - ${step.title}`}
                       loading="lazy"
                     />
                   </div>

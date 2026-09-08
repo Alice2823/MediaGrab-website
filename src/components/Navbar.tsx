@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
       role="banner"
     >
       <div className="container navbar-container">
-        <a href="#" className="navbar-logo" aria-label="MediaGrab">
+        <a href="#" className="navbar-logo" aria-label="MediaGrabs">
           <MediaGrabLogo size={46} showText={true} />
         </a>
 
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <WindowsIcon size={18} />
                 <span>Download for Windows</span>
               </a>
-              <p className="mobile-cta-note">Windows 10 / 11 64-bit • MediaGrab v1.0.10 • Free Utility</p>
+              <p className="mobile-cta-note">Windows 10 / 11 64-bit • MediaGrabs v1.0.10 • Free Utility</p>
             </div>
           </div>
         </div>

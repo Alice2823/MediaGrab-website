@@ -72,7 +72,7 @@ export const Screenshots: React.FC = () => {
           <span className="section-tag purple">Actual Application Interface</span>
           <h2 className="section-title">Designed for Everyday Productivity</h2>
           <p className="section-description">
-            Explore authentic screenshots of the MediaGrab Windows desktop application. Clean, responsive, and crafted with attention to every detail.
+            Explore authentic screenshots of the MediaGrabs Windows desktop application. Clean, responsive, and crafted with attention to every detail.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export const Screenshots: React.FC = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <img src="/logo-mark.png" alt="" style={{ width: 16, height: 16, objectFit: 'contain' }} />
                   <span className="window-title-caption">
-                    MediaGrab • {currentScreenshot.title}
+                    MediaGrabs • {currentScreenshot.title}
                   </span>
                 </div>
                 <div className="window-bar-actions">
@@ -140,7 +140,7 @@ export const Screenshots: React.FC = () => {
               >
                 <img
                   src={currentScreenshot.imageSrc}
-                  alt={`MediaGrab Screenshot - ${currentScreenshot.title}`}
+                  alt={`MediaGrabs Screenshot - ${currentScreenshot.title}`}
                   className="real-screenshot-img"
                   loading="lazy"
                 />

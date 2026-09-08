@@ -17,7 +17,7 @@ export const ConversionSection: React.FC = () => {
             <span className="section-tag">Built-in Local Tools</span>
             <h2 className="section-title">Local Video & Audio Conversion</h2>
             <p className="section-description">
-              MediaGrab also includes local media conversion tools so you can process files already stored on your computer.
+              MediaGrabs also includes local media conversion tools so you can process files already stored on your computer.
             </p>
 
             <div className="conversion-benefits-list">
@@ -72,10 +72,10 @@ export const ConversionSection: React.FC = () => {
                 <div className="window-title-left">
                   <img
                     src="/logo-mark.png"
-                    alt="MediaGrab"
+                    alt="MediaGrabs"
                     style={{ width: 18, height: 18, objectFit: 'contain', display: 'block' }}
                   />
-                  <span className="window-title-text">MediaGrab — Convert Video to Audio</span>
+                  <span className="window-title-text">MediaGrabs — Convert Video to Audio</span>
                 </div>
                 <div className="window-controls">
                   <span className="control-btn minimize" />
@@ -87,13 +87,13 @@ export const ConversionSection: React.FC = () => {
               <div className="conversion-img-wrapper">
                 <img
                   src="/screenshots/app-converter.png"
-                  alt="MediaGrab Convert Video to Audio Interface"
+                  alt="MediaGrabs Convert Video to Audio Interface"
                   className="conversion-real-screenshot"
                   loading="lazy"
                 />
                 <div className="conversion-overlay-tag">
                   <CheckCircle2 size={15} />
-                  <span>Actual MediaGrab Offline Transcoder</span>
+                  <span>Actual MediaGrabs Offline Transcoder</span>
                 </div>
               </div>
 

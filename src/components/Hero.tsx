@@ -1,6 +1,6 @@
 import React from 'react';
 import { WindowsIcon } from './Icons';
-import { ArrowDown, Sparkles, Shield, Cpu, Zap } from 'lucide-react';
+import { ArrowDown, BadgeCheck, Layout, Shield, Cpu, Zap } from 'lucide-react';
 import { ProductPreview } from './ProductPreview';
 import { DOWNLOAD_URL } from '../config';
 import { motion, type Variants } from 'framer-motion';
@@ -57,8 +57,8 @@ export const Hero: React.FC<HeroProps> = () => {
           {/* Trust / Badge */}
           <motion.div variants={itemVariants} className="hero-badge-wrapper">
             <span className="hero-badge">
-              <Sparkles size={14} className="text-white" />
-              <span>MediaGrab v1.0.10 • Official Windows Release</span>
+              <BadgeCheck size={15} className="text-white" />
+              <span>MediaGrabs v1.0.10 • Official Windows Release</span>
             </span>
           </motion.div>
 
@@ -75,7 +75,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
           {/* Description */}
           <motion.p variants={itemVariants} className="hero-description">
-            MediaGrab lets you download permitted media and convert video and audio files with a fast, clean and easy-to-use desktop experience.
+            MediaGrabs lets you download permitted media and convert video and audio files with a fast, clean and easy-to-use desktop experience.
           </motion.p>
 
           {/* Action Buttons */}
@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = () => {
             </div>
             <span className="trust-dot">•</span>
             <div className="trust-item">
-              <Sparkles size={14} />
+              <Layout size={14} />
               <span>Minimal Black & White UI</span>
             </div>
             <span className="trust-dot">•</span>

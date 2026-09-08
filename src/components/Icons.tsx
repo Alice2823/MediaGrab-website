@@ -72,7 +72,7 @@ export const MediaGrabLogo: React.FC<{
   <div className={`brand-logo-container ${className}`}>
     <img
       src="/logo-mark.png"
-      alt="MediaGrab Logo"
+      alt="MediaGrabs Logo"
       className="brand-logo-img"
       style={{
         height: size,
@@ -88,7 +88,7 @@ export const MediaGrabLogo: React.FC<{
         className="brand-logo-text"
         style={textSize ? { fontSize: textSize } : undefined}
       >
-        MediaGrab
+        MediaGrabs
       </span>
     )}
   </div>
