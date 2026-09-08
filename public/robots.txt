@@ -1,0 +1,7 @@
+# MediaGrabs Production robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://mediagrabs.com/sitemap.xml

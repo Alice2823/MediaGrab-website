@@ -5,14 +5,35 @@ import { APP_CONFIG, DOWNLOAD_URL } from '../config';
 
 interface FooterProps {
   onOpenDownloadModal?: () => void;
+  onNavigate?: (href: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = () => {
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/')) {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate(href);
+      }
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+        if (onNavigate) {
+          onNavigate('/' + href);
+        } else {
+          window.location.href = '/' + href;
+        }
+        return;
+      }
+
+      const id = href.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -38,19 +59,67 @@ export const Footer: React.FC<FooterProps> = () => {
             <h4 className="footer-heading">Navigation</h4>
             <ul className="footer-nav-list">
               <li>
-                <a href="#features" onClick={(e) => scrollToSection(e, 'features')}>Features</a>
+                <a href="#features" onClick={(e) => handleNavClick(e, '#features')}>Features</a>
               </li>
               <li>
-                <a href="#how-it-works" onClick={(e) => scrollToSection(e, 'how-it-works')}>How It Works</a>
+                <a href="#how-it-works" onClick={(e) => handleNavClick(e, '#how-it-works')}>How It Works</a>
               </li>
               <li>
-                <a href="#supported-media" onClick={(e) => scrollToSection(e, 'supported-media')}>Supported Media</a>
+                <a href="#supported-media" onClick={(e) => handleNavClick(e, '#supported-media')}>Supported Media</a>
               </li>
               <li>
-                <a href="#conversion" onClick={(e) => scrollToSection(e, 'conversion')}>Local Conversion</a>
+                <a href="#conversion" onClick={(e) => handleNavClick(e, '#conversion')}>Local Conversion</a>
               </li>
               <li>
-                <a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a>
+                <a href="#faq" onClick={(e) => handleNavClick(e, '#faq')}>FAQ</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Popular Tools Column */}
+          <div className="footer-links-col">
+            <h4 className="footer-heading">Popular Tools</h4>
+            <ul className="footer-nav-list">
+              <li>
+                <a
+                  href="/youtube-video-downloader"
+                  onClick={(e) => handleNavClick(e, '/youtube-video-downloader')}
+                >
+                  YouTube Downloader
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/youtube-to-mp3"
+                  onClick={(e) => handleNavClick(e, '/youtube-to-mp3')}
+                >
+                  YouTube to MP3
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/instagram-reels-downloader"
+                  onClick={(e) => handleNavClick(e, '/instagram-reels-downloader')}
+                >
+                  Instagram Reels
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/video-converter"
+                  onClick={(e) => handleNavClick(e, '/video-converter')}
+                >
+                  Video Converter
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/download-tools"
+                  onClick={(e) => handleNavClick(e, '/download-tools')}
+                  className="footer-all-tools-link"
+                >
+                  All Tools (12+) →
+                </a>
               </li>
             </ul>
           </div>
@@ -70,10 +139,10 @@ export const Footer: React.FC<FooterProps> = () => {
                 </a>
               </li>
               <li>
-                <a href="#screenshots" onClick={(e) => scrollToSection(e, 'screenshots')}>App Screenshots</a>
+                <a href="#screenshots" onClick={(e) => handleNavClick(e, '#screenshots')}>App Screenshots</a>
               </li>
               <li>
-                <a href="#why-mediagrab" onClick={(e) => scrollToSection(e, 'why-mediagrab')}>Why MediaGrabs</a>
+                <a href="#why-mediagrab" onClick={(e) => handleNavClick(e, '#why-mediagrab')}>Why MediaGrabs</a>
               </li>
               <li>
                 <a
@@ -123,7 +192,7 @@ export const Footer: React.FC<FooterProps> = () => {
           <div className="footer-bottom-links">
             <span>Built with modern desktop standards</span>
             <span className="dot-divider">•</span>
-            <a href="#hero" onClick={(e) => scrollToSection(e, 'hero')} className="back-to-top-btn">
+            <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="back-to-top-btn">
               Back to Top ↑
             </a>
           </div>

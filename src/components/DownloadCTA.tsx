@@ -28,7 +28,7 @@ export const DownloadCTA: React.FC<DownloadCTAProps> = ({ onOpenDownloadModal })
             {/* Status Pill */}
             <div className="cta-badge">
               <span className="pulse-dot" />
-              <span>Windows 10 & 11 Ready • MediaGrabs v1.0.10</span>
+              <span>Windows 10 & 11 Ready • MediaGrabs {APP_CONFIG.version}</span>
             </div>
 
             <h2 className="cta-title">Ready to try MediaGrabs?</h2>

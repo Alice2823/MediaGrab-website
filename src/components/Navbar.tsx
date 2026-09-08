@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { MediaGrabLogo, WindowsIcon } from './Icons';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { DOWNLOAD_URL } from '../config';
+import { DOWNLOAD_URL, APP_CONFIG } from '../config';
 
 interface NavbarProps {
   onOpenDownloadModal?: () => void;
+  onNavigate?: (href: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -20,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
   }, []);
 
   const navLinks = [
+    { label: 'Tools', href: '/download-tools' },
     { label: 'Features', href: '#features' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Supported Media', href: '#supported-media' },
@@ -28,11 +30,39 @@ export const Navbar: React.FC<NavbarProps> = () => {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
     setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+
+    if (href.startsWith('/')) {
+      if (onNavigate) {
+        e.preventDefault();
+        onNavigate(href);
+      }
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      // If not on homepage, first navigate home, then scroll
+      if (typeof window !== 'undefined' && window.location.pathname !== '/') {
+        if (onNavigate) {
+          onNavigate('/' + href);
+        } else {
+          window.location.href = '/' + href;
+        }
+        return;
+      }
+
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate('/');
     }
   };
 
@@ -42,7 +72,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
       role="banner"
     >
       <div className="container navbar-container">
-        <a href="#" className="navbar-logo" aria-label="MediaGrabs">
+        <a
+          href="/"
+          onClick={handleLogoClick}
+          className="navbar-logo"
+          aria-label="MediaGrabs Home"
+        >
           <MediaGrabLogo size={46} showText={true} />
         </a>
 
@@ -53,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="nav-link"
+                  className={`nav-link ${link.href === '/download-tools' ? 'nav-link-tools' : ''}`}
                   onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.label}
@@ -114,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <WindowsIcon size={18} />
                 <span>Download for Windows</span>
               </a>
-              <p className="mobile-cta-note">Windows 10 / 11 64-bit • MediaGrabs v1.0.10 • Free Utility</p>
+              <p className="mobile-cta-note">Windows 10 / 11 64-bit • MediaGrabs {APP_CONFIG.version} • Free Utility</p>
             </div>
           </div>
         </div>

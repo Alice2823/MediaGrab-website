@@ -2,7 +2,7 @@ import React from 'react';
 import { WindowsIcon } from './Icons';
 import { ArrowDown, BadgeCheck, Layout, Shield, Cpu, Zap } from 'lucide-react';
 import { ProductPreview } from './ProductPreview';
-import { DOWNLOAD_URL } from '../config';
+import { DOWNLOAD_URL, APP_CONFIG } from '../config';
 import { motion, type Variants } from 'framer-motion';
 
 interface HeroProps {
@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = () => {
           <motion.div variants={itemVariants} className="hero-badge-wrapper">
             <span className="hero-badge">
               <BadgeCheck size={15} className="text-white" />
-              <span>MediaGrabs v1.0.10 • Official Windows Release</span>
+              <span>MediaGrabs {APP_CONFIG.version} • Official Windows Release</span>
             </span>
           </motion.div>
 
